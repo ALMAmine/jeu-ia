@@ -35,3 +35,7 @@ Réponse : requestAnimationFrame rappelle boucle, qui calcule dt puis met à jou
 Deuxième question étudiée : « Comment le combo est-il remis à zéro ? » Réponse : par expiration de chronoCombo, par perdreVie en mode normal et au démarrage d’une partie.
 
 Affirmation vérifiée : la glace ralentit les objets à 35 % sans modifier leur vitesse de référence. Test : désactiver les apparitions, placer un objet hors collision et comparer son déplacement sur 0,1 seconde avec puis sans glace. Attendu : 3,5 px contre 10 px pour une vitesse de 100 px/s. Verdict : voir VERIFICATIONS.md. Aucun réglage de test n’est conservé dans le jeu.
+
+## Défi 3 - Plan : décider avant de coder
+
+La spécification et le plan sont dans PLAN.md. Il s’agit d’une relecture du bonus déjà codé, et non d’une session Copilot Plan passée. Contraintes ajoutées : probabilité de glace indépendante et réglable, vitesse de référence inchangée, critère de vérification chiffré. Ces ajustements évitent une rareté implicite et un ralentissement cumulatif.
