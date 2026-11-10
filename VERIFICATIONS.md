@@ -7,4 +7,6 @@
 - Chrome local : titre affiché, thème Forêt sélectionnable, frénésie démarrée, chrono visible, fin automatique et record séparé observés.
 - Une erreur de présentation a été corrigée : le formulaire de pseudo est masqué en frénésie avec une règle CSS explicite `[hidden]`.
 
-Limites : le DOM simulé ne prouve pas le rendu graphique ; le contrôle dans Chrome complète ces tests. Aucun test sur téléphone physique, aucune revue Copilot et aucune vérification GitHub Pages n’ont été réalisés. Les fichiers restent utilisables en ouvrant index.html sans serveur.
+Limites : le DOM simulé ne prouve pas le rendu graphique ; le contrôle dans Chrome complète ces tests. Aucun test sur téléphone physique, la revue Copilot est indisponible dans le sélecteur des reviewers. Les fichiers restent utilisables en ouvrant index.html sans serveur.
+
+Publication : https://almamine.github.io/jeu-ia/ vérifiée avec une réponse HTTP 200 et dans Chrome ; écran titre et démarrage de partie normale observés sur le site public. Pull request #1 fusionnée.

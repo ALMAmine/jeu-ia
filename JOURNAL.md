@@ -60,4 +60,4 @@ Jeu sur GitHub Pages : https://ALMAmine.github.io/jeu-ia/
 
 ## Bilan
 
-L’assistant a réalisé les extensions et les tests rapidement. La lecture du sujet a révélé le compteur total manquant et la nécessité de distinguer les preuves réelles des modes Copilot. Les cinq défis ne peuvent pas être présentés comme intégralement validés sans la preuve de publication et de revue.
+L’assistant a réalisé les extensions et les tests rapidement. La lecture du sujet a révélé le compteur total manquant et la nécessité de distinguer les preuves réelles des modes Copilot. La publication est vérifiée dans Chrome. La revue Copilot reste la preuve manquante, car Copilot n’est pas proposé parmi les reviewers.
