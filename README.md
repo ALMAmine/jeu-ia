@@ -1,3 +1,5 @@
+Jeu : https://ALMAmine.github.io/jeu-ia/
+
 # Pluie de Néon - jeu modèle
 
 Jeu d'arcade web en HTML, CSS et JavaScript pour le cours Outils IA, Bachelor 1, Ynov. Ce dépôt est la base de départ des défis GitHub Copilot : le jeu fonctionne déjà, à toi de l'améliorer.
@@ -65,4 +67,4 @@ Les huit idées d'extensions sont dans `IDEES_DEFIS.md`. Le détail des défis, 
 
 Aimant (M, 6 s), bouclier (B, absorbe une bombe), glace (G, 4 s), boss toutes les 45 s, vagues de 15 cristaux, trois thèmes persistants, classement local de cinq scores et frénésie de 30 s. En frénésie, les points sont doublés, les bombes retirent 3 secondes et les cristaux manqués ne retirent aucune vie. Le record est distinct.
 
-Les bonus apparaissent dans le HUD. Les boutons de thème sont sur le titre. Le pseudo est enregistré en fin de partie normale. Aucun déploiement n’a été effectué, conformément à la dernière demande.
+Les bonus apparaissent dans le HUD. Les boutons de thème sont sur le titre. Le pseudo est enregistré en fin de partie normale. Publication GitHub Pages autorisée et préparée le 10 novembre 2026.

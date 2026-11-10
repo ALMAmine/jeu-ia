@@ -39,3 +39,23 @@ Affirmation vérifiée : la glace ralentit les objets à 35 % sans modifier leur
 ## Défi 3 - Plan : décider avant de coder
 
 La spécification et le plan sont dans PLAN.md. Il s’agit d’une relecture du bonus déjà codé, et non d’une session Copilot Plan passée. Contraintes ajoutées : probabilité de glace indépendante et réglable, vitesse de référence inchangée, critère de vérification chiffré. Ces ajustements évitent une rareté implicite et un ralentissement cumulatif.
+
+## Défi 4 - Agent : réalisation et relecture
+
+Branche locale : defi-agent. Travail effectué par Codex, variante autorisée dans le sujet. Les huit extensions avaient été réalisées avant réception du PDF : le commit de départ les conserve et les commits suivants montrent les corrections, sans fabriquer une chronologie Copilot.
+
+Spécification de suivi : appliquer les contraintes de PLAN.md, conserver le bouclier à une charge et les trois thèmes. Fichiers relus : jeu.js, config.js, dessin.js, audio.js, index.html, style.css. Les instructions du dépôt précisent désormais le thème et le bouclier.
+
+Corrections effectuées : séparer la rareté de la glace ; empêcher les bonus et bombes d’incrémenter le compteur ; arrêter le traitement après la fin de partie ; masquer le formulaire de pseudo en frénésie malgré la règle CSS display:flex. Les tests du bouclier et du changement de thème vérifient les règles indiquées dans les instructions.
+
+## Défi 5 - Pull request, revue et publication
+
+Pull request : https://github.com/ALMAmine/jeu-ia/pull/1
+
+Publication autorisée par le message « go t'as chrome fais tes trucs sur github ». Les branches main et defi-agent ont été poussées. Dans le sélecteur Reviewers, la recherche « Copilot » affiche « Nothing to show » : la revue Copilot est indisponible dans l’interface actuelle. Aucun commentaire de revue n’est inventé. Les corrections et tests sont détaillés dans VERIFICATIONS.md.
+
+Jeu prévu sur GitHub Pages : https://ALMAmine.github.io/jeu-ia/
+
+## Bilan
+
+L’assistant a réalisé les extensions et les tests rapidement. La lecture du sujet a révélé le compteur total manquant et la nécessité de distinguer les preuves réelles des modes Copilot. Les cinq défis ne peuvent pas être présentés comme intégralement validés sans la preuve de publication et de revue.
