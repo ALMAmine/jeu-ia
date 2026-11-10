@@ -50,7 +50,11 @@ Corrections effectuées : séparer la rareté de la glace ; empêcher les bonus 
 
 ## Défi 5 - Pull request, revue et publication
 
-Préparé localement dans PR_DESCRIPTION.md. Aucun push, aucune pull request, aucune revue Copilot et aucun déploiement : l’utilisateur a expressément demandé de ne pas déployer. Aucun lien de jeu public n’est inventé. Cette preuve du défi 5 reste donc à réaliser si la publication est autorisée ultérieurement.
+Pull request : https://github.com/ALMAmine/jeu-ia/pull/1
+
+Publication autorisée par le message « go t'as chrome fais tes trucs sur github ». Les branches main et defi-agent ont été poussées. Dans le sélecteur Reviewers, la recherche « Copilot » affiche « Nothing to show » : la revue Copilot est indisponible dans l’interface actuelle. Aucun commentaire de revue n’est inventé. Les corrections et tests sont détaillés dans VERIFICATIONS.md.
+
+Jeu prévu sur GitHub Pages : https://ALMAmine.github.io/jeu-ia/
 
 ## Bilan
 

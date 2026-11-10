@@ -5,4 +5,4 @@ La glace ralentit temporairement les objets et le bouclier absorbe une seule bom
 Implémentation assistée par Codex, avec relecture des interactions et vérifications consignées dans VERIFICATIONS.md.
 Les exercices et les limites des preuves disponibles sont documentés dans JOURNAL.md.
 
-Document préparatoire uniquement : aucune pull request n’a été ouverte et aucune revue Copilot n’est revendiquée.
+Pull request : https://github.com/ALMAmine/jeu-ia/pull/1. Copilot n’est pas proposé dans le sélecteur des reviewers ; aucune revue Copilot n’est revendiquée.
