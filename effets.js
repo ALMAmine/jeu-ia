@@ -1,12 +1,9 @@
-// Particules, textes flottants, secousse et flash : le game feel.
-
 const particules = [];
 const textesFlottants = [];
 const mouvementReduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let forceSecousse = 0;
 let flashAlpha = 0;
 let flashCouleur = "#ffffff";
-
 function hasard(min, max) {
   return min + Math.random() * (max - min);
 }
@@ -68,7 +65,6 @@ function dessinerEffets(ctx) {
     ctx.fillRect(p.x - p.taille / 2, p.y - p.taille / 2, p.taille, p.taille);
   }
   ctx.restore();
-
   ctx.save();
   ctx.textAlign = "center";
   ctx.font = "700 15px ui-monospace, Menlo, monospace";

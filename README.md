@@ -11,7 +11,7 @@ Déplace le rail néon en bas de l'écran et attrape les cristaux qui tombent. �
 - Bombe : tu perds une vie et ton combo retombe à zéro.
 - Trois vies au départ.
 - Le combo reste actif 3 secondes. À partir de 3 cristaux, le multiplicateur passe à x2, puis x3, x4 et x5.
-- Toutes les 18 secondes, le niveau augmente : les objets tombent plus vite, arrivent plus souvent et les bombes se multiplient.
+- Tous les 15 cristaux attrapés, après une pause d’une seconde, le niveau augmente : les objets tombent plus vite, arrivent plus souvent et les bombes se multiplient.
 - Le meilleur score est conservé dans le navigateur avec `localStorage`.
 
 ## Lancer le jeu
@@ -60,3 +60,9 @@ node --check jeu.js
 ## Défis
 
 Les huit idées d'extensions sont dans `IDEES_DEFIS.md`. Le détail des défis, les prompts à garder et ce qui est évalué sont dans le sujet du cours et dans `JOURNAL.md`.
+
+## Extensions réalisées avec Codex
+
+Aimant (M, 6 s), bouclier (B, absorbe une bombe), glace (G, 4 s), boss toutes les 45 s, vagues de 15 cristaux, trois thèmes persistants, classement local de cinq scores et frénésie de 30 s. En frénésie, les points sont doublés, les bombes retirent 3 secondes et les cristaux manqués ne retirent aucune vie. Le record est distinct.
+
+Les bonus apparaissent dans le HUD. Les boutons de thème sont sur le titre. Le pseudo est enregistré en fin de partie normale. Aucun déploiement n’a été effectué, conformément à la dernière demande.

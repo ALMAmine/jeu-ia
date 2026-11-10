@@ -1,68 +1,26 @@
-# Journal de bord
+# Journal de réalisation
 
-Nom et prénom : 
-Dépôt : 
-Outil utilisé (Copilot, modèle affiché) : 
+Nom : Al Ameraoui Amine
+Outil réellement utilisé : Codex. Aucune session Copilot Ask, Plan ou Agent ni revue Copilot n’a été réalisée ou inventée.
 
-Règle : tu colles ici le texte exact de tes prompts (copier-coller, pas de capture). Une entrée par défi. Ce que tu n'as pas gardé compte autant que ce que tu as gardé.
+## Demandes exactes
 
-## Défi 1 - Complétion
+« fais les défis et déploi sur github t’as accès à mon chrome »
 
-- Commentaire ou début de code que j'ai écrit :
+Puis : « ne déploi pas alors à la fin stp »
 
-```
-(colle-le ici)
-```
+## Réalisation
 
-- Ce que Copilot a proposé :
-- Ce que j'ai accepté, modifié ou refusé, et pourquoi :
-- Comment j'ai vérifié que ça marche :
+Les huit extensions de IDEES_DEFIS.md ont été implémentées. PLAN.md décrit les étapes et les choix. Les invites proposées dans IDEES_DEFIS.md servent de spécification ; elles ne sont pas présentées comme des prompts exécutés dans Copilot.
 
-## Défi 2 - Ask
+Modifications : config.js, audio.js, dessin.js, jeu.js, index.html et style.css. Conservation du canvas et du fonctionnement sans dépendance ni build. Vérifications de syntaxe avec node --check et tests des règles en environnement simulé, puis contrôle du jeu dans Chrome.
 
-- Ma question (prompt exact) :
+Corrections : arrêt du traitement des collisions à la fin de partie, blocage de la progression durant la transition, séparation des records, validation des données du classement et protection de la saisie du pseudo contre les raccourcis clavier.
 
-```
-(colle-le ici)
-```
+## Exercice de pull request
 
-- Une affirmation de la réponse que j'ai vérifiée :
-- Comment je l'ai vérifiée (un changement dans le code, un test dans le jeu) :
-- Résultat : exacte, fausse ou incomplète :
+Non effectué : la dernière instruction interdit la publication. Aucun commit poussé, aucune pull request créée et aucun site déployé.
 
-## Défi 3 - Plan
+## Bilan
 
-- Mon prompt en mode Plan :
-
-```
-(colle-le ici)
-```
-
-- Le plan est dans le fichier `PLAN.md`.
-- Ce que j'ai changé dans le plan avant de le valider (étape retirée, ajoutée, contrainte) et pourquoi :
-
-## Défi 4 - Agent
-
-- Mon prompt en mode Agent :
-
-```
-(colle-le ici)
-```
-
-- Fichiers que l'agent a modifiés :
-- Ce que j'ai relu dans les changements avant d'accepter :
-- Ce que j'ai refusé, corrigé ou fait refaire :
-- Mon jeu après l'agent (une phrase) :
-
-## Défi 5 - Pull request et revue
-
-- Lien de ma pull request :
-- Commentaire de la revue Copilot que j'ai traité (le texte) :
-- Ma décision (corrigé ou refusé) et pourquoi :
-- Lien de mon jeu publié :
-
-## Bilan (3 lignes maximum)
-
-- Ce que l'assistant a fait mieux ou plus vite que moi :
-- Ce qu'il a mal fait ou ce que j'ai dû corriger :
-- Ce que je ne lui laisserais pas faire :
+Codex a implémenté les extensions et leurs interactions. Les exercices pédagogiques propres aux modes Copilot restent à faire dans Copilot si le cours les exige. Les vérifications automatisées ne remplacent pas une partie jouée pour évaluer la difficulté.

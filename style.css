@@ -492,3 +492,18 @@ canvas {
     transition: none;
   }
 }
+
+/* Commandes des huit défis, utilisables aussi sur petit écran. */
+.themes { display:flex; gap:8px; margin:10px 0; }
+.themes button, #form-score button { background:var(--fond-bonus, #151529); color:var(--accent-bonus, #28f0ff); border:1px solid currentColor; border-radius:8px; padding:8px; cursor:pointer; }
+.themes button[aria-pressed="true"] { background:var(--accent-bonus, #28f0ff); color:#101020; }
+#classement { margin:8px 0; padding-left:24px; font-size:12px; line-height:1.5; }
+#form-score { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; max-width:280px; font-size:12px; margin:12px; }
+#pseudo { width:58px; padding:8px; text-transform:uppercase; }
+.bonus { position:absolute; top:92px; left:16px; right:16px; font-size:12px; color:var(--accent-bonus, #28f0ff); text-align:center; }
+.ecran { overflow-y:auto; }
+body { background-color:var(--fond-bonus, #05030f); }
+body .titre, body .score { color:var(--accent-bonus, #28f0ff); }
+@media(max-height:750px) { .ecran .titre { font-size:44px; } .ecran .commandes { margin:8px; } }
+
+#form-score[hidden] { display: none; }

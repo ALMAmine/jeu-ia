@@ -1,31 +1,25 @@
-// Dessin du décor, du panier et des objets. Tout est tracé au canvas.
-
 const etoiles = [];
 for (let i = 0; i < 64; i++) {
   etoiles.push({ x: Math.random() * LARGEUR, y: Math.random() * HAUTEUR * 0.6, taille: Math.random() + 0.5, phase: Math.random() * 6.28 });
 }
 function dessinerFond(ctx, temps) {
   const degrade = ctx.createLinearGradient(0, 0, 0, HAUTEUR);
-  degrade.addColorStop(0, "#170b32");
+  degrade.addColorStop(0, COULEURS.fond);
   degrade.addColorStop(0.52, COULEURS.fond);
-  degrade.addColorStop(1, "#02010a");
+  degrade.addColorStop(1, COULEURS.fond);
   ctx.fillStyle = degrade;
   ctx.fillRect(0, 0, LARGEUR, HAUTEUR);
-
-  const horizon = HAUTEUR * 0.58;
-  const halo = ctx.createRadialGradient(LARGEUR / 2, horizon, 4, LARGEUR / 2, horizon, LARGEUR * 0.8);
+  const horizon = HAUTEUR * 0.58; const halo = ctx.createRadialGradient(LARGEUR / 2, horizon, 4, LARGEUR / 2, horizon, LARGEUR * 0.8);
   halo.addColorStop(0, "rgba(255, 62, 165, 0.2)");
   halo.addColorStop(0.5, "rgba(122, 92, 255, 0.07)");
   halo.addColorStop(1, "rgba(0, 0, 0, 0)");
   ctx.fillStyle = halo;
   ctx.fillRect(0, 0, LARGEUR, HAUTEUR);
-
   for (const etoile of etoiles) {
     const lueur = 0.2 + 0.4 * Math.abs(Math.sin(temps + etoile.phase));
     ctx.fillStyle = "rgba(245, 247, 255, " + lueur + ")";
     ctx.fillRect(etoile.x, etoile.y, etoile.taille, etoile.taille);
   }
-
   ctx.strokeStyle = COULEURS.grille;
   ctx.lineWidth = 1;
   ctx.beginPath();
@@ -35,8 +29,7 @@ function dessinerFond(ctx, temps) {
   }
   ctx.stroke();
   for (let i = 0; i < 14; i++) {
-    const avancee = (i + (temps * 0.3) % 1) / 14;
-    const y = horizon + Math.pow(avancee, 2.3) * (HAUTEUR - horizon);
+    const avancee = (i + (temps * 0.3) % 1) / 14; const y = horizon + Math.pow(avancee, 2.3) * (HAUTEUR - horizon);
     ctx.globalAlpha = 0.12 + avancee * 0.5;
     ctx.beginPath();
     ctx.moveTo(0, y);
@@ -44,7 +37,6 @@ function dessinerFond(ctx, temps) {
     ctx.stroke();
   }
   ctx.globalAlpha = 1;
-
   ctx.save();
   ctx.shadowColor = COULEURS.magenta;
   ctx.shadowBlur = 16;
@@ -56,8 +48,7 @@ function dessinerFond(ctx, temps) {
   ctx.restore();
 }
 function dessinerPanier(ctx, panier, temps) {
-  const inclinaison = Math.max(-0.2, Math.min(0.2, panier.vitesse * 0.00025));
-  const pulsation = 0.6 + 0.4 * Math.sin(temps * 6);
+  const inclinaison = Math.max(-0.2, Math.min(0.2, panier.vitesse * 0.00025)); const pulsation = 0.6 + 0.4 * Math.sin(temps * 6);
   ctx.save();
   ctx.translate(panier.x + panier.largeur / 2, panier.y + panier.hauteur / 2);
   ctx.rotate(inclinaison);
@@ -81,10 +72,8 @@ function dessinerPanier(ctx, panier, temps) {
   ctx.restore();
 }
 function dessinerCristal(ctx, objet, temps) {
-  const r = objet.rayon;
-  const dore = objet.type === DORE;
-  const couleur = dore ? COULEURS.or : COULEURS.cyan;
-  const battement = 1 + 0.06 * Math.sin(temps * 5 + objet.pulsation);
+  const r = objet.rayon; const dore = objet.type === DORE;
+  const couleur = dore ? COULEURS.or : COULEURS.cyan; const battement = 1 + 0.06 * Math.sin(temps * 5 + objet.pulsation);
   ctx.rotate(objet.rotation);
   ctx.scale(battement, battement);
   ctx.shadowColor = couleur;
@@ -139,6 +128,18 @@ function dessinerObjet(ctx, objet, temps) {
   ctx.save();
   ctx.translate(objet.x, objet.y);
   if (objet.type === BOMBE) dessinerBombe(ctx, objet, temps);
-  else dessinerCristal(ctx, objet, temps);
+  else if ([AIMANT, BOUCLIER, GLACE].includes(objet.type)) {
+    ctx.strokeStyle = objet.type === GLACE ? "#bceaff" : COULEURS.cyan; ctx.fillStyle = ctx.strokeStyle; ctx.shadowColor = ctx.strokeStyle; ctx.shadowBlur = 16;
+    ctx.beginPath(); ctx.arc(0, 0, 17, 0, Math.PI * 2); ctx.stroke(); ctx.font = "bold 20px monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(objet.type === AIMANT ? "M" : objet.type === BOUCLIER ? "B" : "G", 0, 1);
+  } else dessinerCristal(ctx, objet, temps);
+  ctx.restore();
+}
+function dessinerBonus(ctx, panier, aimant, bouclier, boss) {
+  ctx.save(); ctx.strokeStyle = COULEURS.cyan; ctx.shadowColor = COULEURS.cyan; ctx.shadowBlur = 18;
+  if (aimant > 0 || bouclier) { ctx.beginPath(); ctx.ellipse(panier.x + panier.largeur / 2, panier.y, aimant > 0 ? REGLAGES.rayonAimant : 65, aimant > 0 ? 80 : 30, 0, 0, Math.PI * 2); ctx.stroke(); }
+  if (boss) {
+    ctx.fillStyle = COULEURS.rouge; ctx.beginPath(); ctx.moveTo(boss.x - 35, 65); ctx.lineTo(boss.x, 95); ctx.lineTo(boss.x + 35, 65); ctx.closePath(); ctx.fill();
+    ctx.font = "bold 15px monospace"; ctx.textAlign = "center"; ctx.fillText("LE BRISEUR", LARGEUR / 2, 145); ctx.fillRect(100, 155, 280 * Math.max(0, boss.temps / REGLAGES.dureeBoss), 5);
+  }
   ctx.restore();
 }

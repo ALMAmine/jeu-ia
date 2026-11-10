@@ -23,6 +23,7 @@
           <strong id="score" class="score">0</strong>
           <span id="niveau" class="niveau">NIVEAU 1</span>
         </div>
+        <div id="bonus" class="bonus" aria-live="polite"></div>
         <div id="combo" class="combo">
           <span id="combo-valeur">x1</span>
           <div class="combo-jauge"><i id="combo-jauge"></i></div>
@@ -39,6 +40,9 @@
         <p class="sur-titre">JEU MODÈLE / BACHELOR 1</p>
         <h1 class="titre">PLUIE<br>DE NÉON</h1>
         <p class="but">Attrape les cristaux.<br>Évite les bombes.</p>
+        <div class="themes" aria-label="Thème"><button data-theme="neon">Néon</button><button data-theme="sunset">Sunset</button><button data-theme="foret">Forêt</button></div>
+        <ol id="classement" aria-label="Classement local"></ol>
+        <button id="bouton-frenesie" class="bouton-secondaire" type="button">FRÉNÉSIE · 30 S</button>
         <button id="bouton-jouer" class="bouton-principal" type="button">JOUER</button>
         <p class="record-titre">RECORD <strong id="record-titre">0</strong></p>
         <p class="commandes">Flèches ou A et D<br>Souris ou doigt</p>
@@ -53,6 +57,7 @@
           <span>RECORD</span>
           <strong id="fin-record">0</strong>
         </div>
+        <form id="form-score"><label for="pseudo">Pseudo (3 lettres)</label><input id="pseudo" maxlength="3" pattern="[A-Za-z]{1,3}" autocomplete="nickname" required><button type="submit">ENREGISTRER</button><span id="score-enregistre" role="status"></span></form>
         <button id="bouton-rejouer" class="bouton-principal" type="button">REJOUER</button>
         <button id="bouton-menu" class="bouton-secondaire" type="button">MENU</button>
         <p class="commandes">Entrée ou Espace pour rejouer</p>

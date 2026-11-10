@@ -1,10 +1,6 @@
-// Sons synthétisés avec l'API Web Audio : aucun fichier audio externe.
-// Le navigateur crée le son seulement après un clic ou une touche.
-
 let audio = null;
 let gainGeneral = null;
 let sonActif = true;
-
 function preparerAudio() {
   if (!audio) {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -23,8 +19,6 @@ function basculerSon() {
   }
   return sonActif;
 }
-
-// Une note courte : fréquence en hertz, durée en secondes.
 function note(frequence, duree, type, volume, glisse) {
   if (!sonActif) return;
   preparerAudio();
@@ -76,3 +70,6 @@ function sonClic() {
 function sonRecord() {
   sonSuite([523, 659, 784, 1046, 1318], 0.16, "triangle", 0.15);
 }
+function sonBonus() { sonSuite([660, 990, 1320], 0.1, "sine", 0.12); }
+function sonBouclier() { note(1400, 0.3, "triangle", 0.2, -1200); }
+function sonAlarme() { sonSuite([220, 440, 220, 440], 0.18, "sawtooth", 0.08); }
