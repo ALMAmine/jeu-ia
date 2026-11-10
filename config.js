@@ -26,7 +26,7 @@ const REGLAGES = {
 };
 const CLE_RECORD = "pluieDeNeonRecord";
 const AIMANT = "aimant", BOUCLIER = "bouclier", GLACE = "glace";
-Object.assign(REGLAGES, { dureeAimant: 6, rayonAimant: 120, dureeGlace: 4, facteurGlace: 0.35, hasardBonus: 0.09, objectif: 15, pauseNiveau: 1, intervalleBoss: 45, dureeBoss: 8, bombeBoss: 0.8, dureeFrenesie: 30 });
+Object.assign(REGLAGES, { dureeAimant: 6, rayonAimant: 120, dureeGlace: 4, facteurGlace: 0.35, hasardBonus: 0.09, hasardGlace: 0.02, objectif: 15, pauseNiveau: 1, intervalleBoss: 45, dureeBoss: 8, bombeBoss: 0.8, dureeFrenesie: 30 });
 const THEMES = {
   neon: { fond: "#05030f", cyan: "#28f0ff", magenta: "#ff3ea5", grille: "#28f0ff29" },
   sunset: { fond: "#24101a", cyan: "#ffb347", magenta: "#ff6b89", grille: "#ffb34729" },

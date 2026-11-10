@@ -57,7 +57,8 @@ function creerObjet() {
   const tirage = Math.random(); let type = CRISTAL;
   if (tirage < Math.min(0.42, REGLAGES.hasardBombe + (niveau - 1) * 0.03)) type = BOMBE;
   else if (tirage > 1 - REGLAGES.hasardDore) type = DORE;
-  if (type === CRISTAL && Math.random() < REGLAGES.hasardBonus) type = [AIMANT, BOUCLIER, GLACE][Math.floor(Math.random() * 3)];
+  if (type === CRISTAL && tirage < Math.min(0.42, REGLAGES.hasardBombe + (niveau - 1) * 0.03) + REGLAGES.hasardGlace) type = GLACE;
+  else if (type === CRISTAL && Math.random() < REGLAGES.hasardBonus) type = Math.random() < 0.5 ? AIMANT : BOUCLIER;
   const rayon = type === DORE ? 17 : type === BOMBE ? 15 : 13; const vitesse = Math.min(REGLAGES.vitesseChuteMax, REGLAGES.vitesseChute + (niveau - 1) * 28);
   objets.push({
     type: type, x: hasard(rayon + 12, LARGEUR - rayon - 12), y: -rayon - 8, rayon: rayon,
