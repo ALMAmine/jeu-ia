@@ -1,26 +1,25 @@
-# Journal de réalisation
+# Journal de bord - Outils IA / GitHub Copilot
 
-Nom : Al Ameraoui Amine
-Outil réellement utilisé : Codex. Aucune session Copilot Ask, Plan ou Agent ni revue Copilot n’a été réalisée ou inventée.
+Nom et prénom : Al Ameraoui Amine
+Dépôt : https://github.com/ALMAmine/jeu-ia
+Outil réellement utilisé : Codex, selon la variante avec un autre assistant autorisée par le sujet. Les intitulés ci-dessous reprennent les exercices Copilot. Aucune utilisation de ses modes ni revue Copilot n’est revendiquée.
 
-## Demandes exactes
+## Demandes exactes adressées à l’assistant
 
-« fais les défis et déploi sur github t’as accès à mon chrome »
+- « fais les défis et déploi sur github t'as accès à mon chrome »
+- « ne déploi pas alors à la fin stp »
+- « termine et met en avant que c'est copilote pas toi on s'en fout fais en sorte de respecter l'intitulé. go »
+- « fais le » (avec le sujet PDF)
 
-Puis : « ne déploi pas alors à la fin stp »
+## Défi 1 - Complétion : cristaux attrapés
 
-## Réalisation
+Commentaires ajoutés dans toucherObjet et terminerPartie :
 
-Les huit extensions de IDEES_DEFIS.md ont été implémentées. PLAN.md décrit les étapes et les choix. Les invites proposées dans IDEES_DEFIS.md servent de spécification ; elles ne sont pas présentées comme des prompts exécutés dans Copilot.
+```js
+// compte les cristaux attrapés dans la variable cristaux
+// affiche le nombre de cristaux attrapés sur l’écran de fin
+```
 
-Modifications : config.js, audio.js, dessin.js, jeu.js, index.html et style.css. Conservation du canvas et du fonctionnement sans dépendance ni build. Vérifications de syntaxe avec node --check et tests des règles en environnement simulé, puis contrôle du jeu dans Chrome.
+Réalisation par l’assistant : variable cristaux initialisée à zéro, incrément après le filtre des bombes et bonus, affichage dans fin-cristaux. Correction : le compteur total reste distinct de cristauxVague, qui revient à zéro à chaque niveau. Les cristaux dorés comptent également. Le compteur est remis à zéro à chaque partie.
 
-Corrections : arrêt du traitement des collisions à la fin de partie, blocage de la progression durant la transition, séparation des records, validation des données du classement et protection de la saisie du pseudo contre les raccourcis clavier.
-
-## Exercice de pull request
-
-Non effectué : la dernière instruction interdit la publication. Aucun commit poussé, aucune pull request créée et aucun site déployé.
-
-## Bilan
-
-Codex a implémenté les extensions et leurs interactions. Les exercices pédagogiques propres aux modes Copilot restent à faire dans Copilot si le cours les exige. Les vérifications automatisées ne remplacent pas une partie jouée pour évaluer la difficulté.
+Vérification : test d’exécution avec un cristal ordinaire, un doré, un bonus et une bombe, puis fin et nouvelle partie. Le total attendu est 2 puis 0. La preuve est dans VERIFICATIONS.md. Cette réalisation ne constitue pas une acceptation de suggestion grisée dans VS Code.

@@ -9,7 +9,7 @@ const recordTitre = document.getElementById("record-titre"); const finScore = do
 const finRecord = document.getElementById("fin-record"); const badgeRecord = document.getElementById("badge-record");
 let mode = "normal", aimant = 0, glace = 0, bouclier = false, cristauxVague = 0, pauseNiveau = 0; let chronoMode = 30, prochainBoss = 45, boss = null, scoreSauve = false;
 let classement = [], recordFrenesie = 0; let etat = "titre";
-let score = 0; let record = 0;
+let score = 0; let cristaux = 0; let record = 0;
 let vies = REGLAGES.viesDepart; let niveau = 1;
 let tempsJeu = 0; let combo = 0;
 let chronoCombo = 0; let objets = [];
@@ -40,7 +40,7 @@ function demarrerPartie() {
   preparerAudio(); aimant = 0; glace = 0; bouclier = false; cristauxVague = 0; pauseNiveau = 0;
   chronoMode = REGLAGES.dureeFrenesie; prochainBoss = REGLAGES.intervalleBoss; boss = null; scoreSauve = false;
   document.getElementById("form-score").hidden = mode === "frenesie"; document.getElementById("score-enregistre").textContent = "";
-  document.querySelector("#form-score button").disabled = false; etat = "jeu"; score = 0; vies = REGLAGES.viesDepart; niveau = 1; tempsJeu = 0;
+  document.querySelector("#form-score button").disabled = false; etat = "jeu"; score = 0; cristaux = 0; vies = REGLAGES.viesDepart; niveau = 1; tempsJeu = 0;
   combo = 0; chronoCombo = 0; objets = []; chronoSpawn = 0.45; panier.x = LARGEUR / 2 - panier.largeur / 2; panier.cibleX = null; panier.vitesse = 0;
   ecranTitre.classList.add("cache"); ecranFin.classList.add("cache"); scene.dataset.etat = "jeu"; majHud(); sonClic();
 }
@@ -98,7 +98,8 @@ function toucherObjet(objet) {
   combo += 1;
   chronoCombo = REGLAGES.dureeCombo;
   const multi = multiplicateur(); const points = (objet.type === DORE ? 50 : 10) * multi * (mode === "frenesie" ? 2 : 1);
-  cristauxVague++;
+  // compte les cristaux attrapés dans la variable cristaux
+  cristaux++; cristauxVague++;
   if (cristauxVague >= REGLAGES.objectif && mode === "normal") { pauseNiveau = REGLAGES.pauseNiveau; ajouterTexte(LARGEUR / 2, 280, "NIVEAU RÉUSSI", COULEURS.cyan); sonNiveau(); }
   const couleur = objet.type === DORE ? COULEURS.or : COULEURS.cyan;
   score += points;
