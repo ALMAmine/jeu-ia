@@ -1,7 +1,6 @@
 const LARGEUR = 480; // largeur logique du canvas
 const HAUTEUR = 720; // hauteur logique du canvas
-const CRISTAL = "cristal";
-const BOMBE = "bombe";
+const CRISTAL = "cristal"; const BOMBE = "bombe";
 const DORE = "dore";
 const COULEURS = {
   fond: "#05030f", cyan: "#28f0ff", magenta: "#ff3ea5",
