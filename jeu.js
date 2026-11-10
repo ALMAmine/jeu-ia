@@ -49,6 +49,7 @@ function terminerPartie() {
   if (mode === "frenesie") { recordFrenesie = Math.max(recordFrenesie, score); try { localStorage.setItem("neonFrenesie", recordFrenesie); } catch (erreur) {} }
   else if (nouveauRecord) { record = score; ecrireRecord(); }
   creerParticules(panier.x + panier.largeur / 2, panier.y, COULEURS.cyan, 26, 280); secouer(20); flasher(COULEURS.blanc, 0.4); finScore.textContent = score;
+  document.getElementById("fin-cristaux").textContent = cristaux;
   finRecord.textContent = mode === "frenesie" ? recordFrenesie : record; badgeRecord.classList.toggle("cache", !nouveauRecord); scene.dataset.etat = "fin";
   ecranFin.classList.remove("cache");
   if (nouveauRecord) setTimeout(sonRecord, 250);
