@@ -54,7 +54,9 @@ Pull request : https://github.com/ALMAmine/jeu-ia/pull/1
 
 Publication autorisée par le message « go t'as chrome fais tes trucs sur github ». Les branches main et defi-agent ont été poussées. Dans le sélecteur Reviewers, la recherche « Copilot » affiche « Nothing to show » : la revue Copilot est indisponible dans l’interface actuelle. Aucun commentaire de revue n’est inventé. Les corrections et tests sont détaillés dans VERIFICATIONS.md.
 
-Jeu prévu sur GitHub Pages : https://ALMAmine.github.io/jeu-ia/
+Pull request fusionnée dans main le 10 novembre 2026. GitHub Pages activé sur main, dossier racine.
+
+Jeu sur GitHub Pages : https://ALMAmine.github.io/jeu-ia/
 
 ## Bilan
 
