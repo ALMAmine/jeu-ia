@@ -27,3 +27,6 @@ Ce fichier est lu automatiquement par Copilot quand il travaille sur ce dépôt.
 - Dis comment vérifier le résultat dans le navigateur, avec les touches ou les clics à faire.
 - Si ma demande est ambiguë, pose une question avant d'écrire du code.
 - Après une modification JavaScript, lance `node --check` sur le fichier touché.
+
+Thème personnel : conserver Pluie de Néon avec trois palettes Néon, Sunset et Forêt ; les bonus portent les lettres M, B et G.
+Règles : le bouclier absorbe une seule bombe sans se cumuler ; les bombes restent rouges et magenta dans chaque palette.
